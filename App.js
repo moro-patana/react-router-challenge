@@ -2,6 +2,7 @@ import React from 'react';
 
 import Home from './Home';
 import Products from './Products';
+import ProductDetails from "./components/productDetails"
 import {Link, Switch, Route} from "react-router-dom"
 
 function App() {
@@ -13,7 +14,10 @@ function App() {
 			</nav>
 			<Switch>
 				<Route exact path="/"><Home/></Route>
-				<Route path="/products"><Products/></Route>
+				<Route exact path="/products"><Products/></Route>
+				<Route path="/products/:productId">
+					<ProductDetails/>
+				</Route>
 			</Switch>
 			{/*
                 Route between 2 components depending on the path:
